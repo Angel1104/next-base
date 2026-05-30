@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# praxis-next
 
-## Getting Started
+Next.js base for hackathons — clone, install, run.
 
-First, run the development server:
+Includes [Praxis](https://github.com/Angel1104/praxis-core) skills pre-installed.
+Connects to [praxis-fastapi](https://github.com/Angel1104/fastapi-base) on port 8000.
+
+## Quickstart
 
 ```bash
+git clone https://github.com/Angel1104/next-base.git
+cd next-base
+cp .env.local.example .env.local
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App: http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Start the FastAPI backend first — the app fetches from `http://localhost:8000`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What's included
 
-## Learn More
+- Next.js 15 App Router + TypeScript + Tailwind CSS
+- `lib/api.ts` — fetch wrapper pointing to FastAPI
+- `lib/items.ts` — example resource (get/create items)
+- `app/page.tsx` — working UI connected to the backend
 
-To learn more about Next.js, take a look at the following resources:
+## Build your feature
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+/plan  describe what you want to build
+/build <cr-id>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Or pass an architect brief:
 
-## Deploy on Vercel
+```
+/plan briefs/my-feature.md
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Stitch integration
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Generate your UI at [stitch.withgoogle.com](https://stitch.withgoogle.com), export React + Tailwind,
+paste the component into `app/` or `components/`, then use `/plan` to wire it to the backend.
